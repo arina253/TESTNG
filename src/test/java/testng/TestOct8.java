@@ -20,36 +20,29 @@ public class TestOct8 {
 	}
 
 	@DataProvider(name = "loginData")
-	public Object[][]providerloginData(){
-		return new Object[][] {
-			{"standard_user","secret_sauce"},
-			{"locked_out_user","secret_sauce"},
-			{"problem_user","secret_sauce"},
-			{"performance_glitch_user","secret_sauce"}
-			
+	public Object[][] providerloginData() {
+		return new Object[][] { { "standard_user", "secret_sauce" }, { "locked_out_user", "secret_sauce" },
+				{ "problem_user", "secret_sauce" }, { "performance_glitch_user", "secret_sauce" }
+
 		};
 	}
-		
 
-	
-	@Test (dataProvider = "loginData",groups = "login")
-	public void Login(String username,String pass) {
+	@Test(dataProvider = "loginData", groups = "login")
+	public void Login(String username, String pwd) {
 
-		
 		driver.findElement(By.id("user-name")).sendKeys(username);
-		driver.findElement(By.id("password")).sendKeys(pass);
+		driver.findElement(By.id("password")).sendKeys(pwd);
 		driver.findElement(By.id("login-button")).click();
-		
+
 		boolean avail = driver.getCurrentUrl().contains("inventory");
 		Assert.assertTrue(avail);
 		driver.close();
 
 	}
-	
-@AfterMethod
+
+	@AfterMethod
 	public void closeBrowser() {
-		//driver.close();
+		// driver.close();
 	}
 
 }
-

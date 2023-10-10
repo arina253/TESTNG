@@ -14,8 +14,9 @@ public class Day9DataProvider {
 	
 	WebDriver driver;
 	
-	//DataProvider in testNg------to run a single test case with multiple data
-	//DataProvider return multidimensional object array
+	//DataProvider in testNg------to run a single test case with multiple set of data
+	//DataProvider return type: multidimensional object array
+	//Can provide data set with key value pairs
 	
 	@DataProvider(name = "loginData")
 	public Object[][]providerLoginData(){
