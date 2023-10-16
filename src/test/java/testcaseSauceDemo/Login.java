@@ -17,11 +17,10 @@ public class Login {
 
 	@BeforeClass
 	public void setUp() {
+
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--start-maximized");
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver();
 		loginPage = new LoginPage(driver);
 	}
 
@@ -31,7 +30,7 @@ public class Login {
 		loginPage.login("standard_user", "secret_sauce");
 
 		// Verify that the user is logged in (e.g., check for products)
-		ProductsPage productsPage = new ProductsPage(driver);
+//		ProductsPage productsPage = new ProductsPage(driver);
 		// Assert.assertTrue(productsPage.isPageOpened(), "Products page is not
 		// opened.");
 	}
