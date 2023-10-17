@@ -2,10 +2,9 @@ package testcaseSauceDemo;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
@@ -14,8 +13,9 @@ import Pages.ProductsPage;
 public class Login {
 	private WebDriver driver;
 	private LoginPage loginPage;
+	private ProductsPage productsPage;
 
-	@BeforeClass
+	@BeforeTest
 	public void setUp() {
 
 		System.setProperty("webdriver.chrome.driver",
@@ -30,10 +30,9 @@ public class Login {
 		loginPage.login("standard_user", "secret_sauce");
 
 		// Verify that the user is logged in (e.g., check for products)
-//		ProductsPage productsPage = new ProductsPage(driver);
-		// Assert.assertTrue(productsPage.isPageOpened(), "Products page is not
-		// opened.");
-	}
+	ProductsPage productsPage = new ProductsPage(driver);
+	 //Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened.");
+		 }
 
 	@Test
 	public void testLoginWithoutPassword() {
@@ -62,7 +61,7 @@ public class Login {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 		driver.quit();
 	}
