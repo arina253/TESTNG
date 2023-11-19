@@ -3,8 +3,8 @@ package testcaseSauceDemo;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
@@ -15,11 +15,15 @@ public class Login {
 	private LoginPage loginPage;
 	private ProductsPage productsPage;
 
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
 
+//		System.setProperty("webdriver.chrome.driver",
+//				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+		
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
+
 		driver = new ChromeDriver();
 		loginPage = new LoginPage(driver);
 	}
@@ -30,9 +34,9 @@ public class Login {
 		loginPage.login("standard_user", "secret_sauce");
 
 		// Verify that the user is logged in (e.g., check for products)
-	ProductsPage productsPage = new ProductsPage(driver);
-	 //Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened.");
-		 }
+		ProductsPage productsPage = new ProductsPage(driver);
+		Assert.assertEquals(productsPage.isPageOpened(), "https://www.saucedemo.com/inventory.html");
+	}
 
 	@Test
 	public void testLoginWithoutPassword() {
@@ -41,6 +45,7 @@ public class Login {
 
 		// Verify the error state
 		Assert.assertTrue(loginPage.isErrorState(), "Error message is not displayed.");
+		
 	}
 
 	@Test
@@ -50,20 +55,22 @@ public class Login {
 		boolean avail = loginPage.isErrorState();
 
 		// Verify the error state
-//		Assert.assertTrue(loginPage.isErrorState(), "Error message is not displayed.");
-        Assert.assertTrue(avail);	
+		Assert.assertTrue(loginPage.isErrorState(), "Error message is not displayed.");
+
+		Assert.assertTrue(avail);
 	}
 
 	@Test
 	public void verifyTitleForLogin() {
-		String actual = driver.getTitle();
+		driver.get("https://www.saucedemo.com");
+		String actual = loginPage.verifyTitle();
 		String expected = "Swag Labs";
 		Assert.assertEquals(actual, expected);
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }

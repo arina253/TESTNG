@@ -49,5 +49,9 @@ public class LoginPage {
     public boolean isErrorState() {
         return driver.findElement(errorState).isDisplayed();
     }
+    
+    public String verifyTitle() {
+    	return driver.getTitle(); 
+    	}
 }
 

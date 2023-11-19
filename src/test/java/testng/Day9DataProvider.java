@@ -22,7 +22,7 @@ public class Day9DataProvider {
 	public Object[][]providerLoginData(){
 		return new Object[][] {
 			{"standard_user","secret_sauce"},
-			//{"locked_out_user","secret_sauce"},
+			{"locked_out_user","secret_sauce"},
 			{"problem_user","secret_sauce"},
 			{"performance_glitch_user","secret_sauce"}
 		};
@@ -32,7 +32,7 @@ public class Day9DataProvider {
 	@Test (dataProvider = "loginData")
 	public void Login(String username,String pass) {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
 		

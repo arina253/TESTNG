@@ -33,7 +33,7 @@ public class Day6 {
 	
 	@AfterMethod
 	public void browserClose() {
-		driver.close();
+		//driver.close();
 	}
 	
 	

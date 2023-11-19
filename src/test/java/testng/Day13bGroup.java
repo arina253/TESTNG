@@ -2,7 +2,7 @@ package testng;
 
 import org.testng.annotations.Test;
 
-public class Day13b {
+public class Day13bGroup {
 	
 	@Test(groups = {"login"})
 	public void testCase4() {

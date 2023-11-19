@@ -18,7 +18,7 @@ public class Day8a {
 		//Hard Assertion
 		
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.webdriveruniversity.com/");
 		
@@ -46,7 +46,7 @@ public class Day8a {
 		//Soft Assertion
 		
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.webdriveruniversity.com/");
 		

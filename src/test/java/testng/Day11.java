@@ -19,7 +19,7 @@ public class Day11 {
 	public void TestCase1(String un, String pwd) {
 		System.out.println("Test case one");
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
 		
@@ -39,7 +39,7 @@ public class Day11 {
 	public void TestCase2(String un, String pwd) {
 		System.out.println("Test case two");
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
 		
@@ -59,7 +59,7 @@ public class Day11 {
 public void TestCase3(String un, String pwd) {
 	System.out.println("Test case three");
 	System.setProperty("webdriver.chrome.driver",
-			"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+			"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.get("https://www.saucedemo.com/");
 	
@@ -79,7 +79,7 @@ public void TestCase3(String un, String pwd) {
 public void TestCase4(String un, String pwd) {
 	System.out.println("Test case four");
 	System.setProperty("webdriver.chrome.driver",
-			"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+			"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.get("https://www.saucedemo.com/");
 	

@@ -20,10 +20,8 @@ public class ProductsPage {
     public List<WebElement> getProductItems() {
         return driver.findElements(productItems);
     }
-	
-	
-	
-	
-	
-
+    
+    public String isPageOpened() {
+    	return driver.getCurrentUrl();
+	}
 }

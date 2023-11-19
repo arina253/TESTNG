@@ -5,13 +5,16 @@
 	<parameter name="password" value="secret_sauce"></parameter>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testng.Day11" />
-			<methods>
-				<exclude name="TestCase1"></exclude>
-			</methods>
-
+			<class name="testng.Day11">
+				<methods>
+					<exclude name="TestCase1"></exclude>
+				</methods>
+			</class>
 		</classes>
-	</test> <!--
+		</test> <!--
 	Test -->
 </suite> <!--
 Suite -->
+
+
+

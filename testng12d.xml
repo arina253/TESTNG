@@ -7,7 +7,7 @@
 		</classes>
 	</test> <!-- Test -->
 	
-	<test thread-count="5" name="Test">
+	<test thread-count="5" name="Testa">
 		<classes>
 			<class name="testng.Day12e" />
 		</classes>

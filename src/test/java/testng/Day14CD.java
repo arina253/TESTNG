@@ -18,6 +18,7 @@ public class Day14CD {
 	public void search() {
 		System.out.println("Executing the search test case");
 		Assert.assertEquals(false,true);
+		
 	}
 	
 	@Test (dependsOnMethods = {"login","search"})

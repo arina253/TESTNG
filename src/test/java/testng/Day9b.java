@@ -19,7 +19,7 @@ public class Day9b {
 	@Test()
 	public void login(String un, String pwd) {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\joshi\\Downloads\\chromedriver\\chromedriver\\chromedriver.exe");
+				"C:\\Users\\joshi\\Downloads\\chromedriver-win64\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
 		
